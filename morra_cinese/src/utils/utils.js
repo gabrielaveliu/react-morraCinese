@@ -1,7 +1,7 @@
 
 const utils = {
     getRandomNumber: function (min, max) {
-        let num = Math.round(Math.random() * max) - min;
+        let num = Math.round(Math.random() * max - min) + min;
         return num;
     }
 }

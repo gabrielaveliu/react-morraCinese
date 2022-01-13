@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
 
 /* utils */
@@ -16,10 +17,24 @@ class CoreGame extends Component {
         this.state = {
             player: {
                 name: this.props.namePlayer,
-                punteggio: 0,
+                points: 0,
             }
         }
+
     }
+
+    /* chiamata per passare i punti alla Home */
+    savePlayer = () => {
+        let player = this.state.player.name
+        console.log(player, this.state.player.points)
+
+        let arr = [{ c: 1 }, { c: 1 }, { c: 1 }, { c: 1 }, { c: 1 }]
+
+        localStorage.setItem("arrayOfPlayers", arr);
+    }
+
+
+
 
     /* forbici vince su carta, perde su sasso */
     match = (typeCard) => {
@@ -51,9 +66,9 @@ class CoreGame extends Component {
             this.setState({
 
                 player: {
-                    punteggio: this.state.player.punteggio+1
+                    points: this.state.player.points + 1,
+                    name: this.props.namePlayer
                 }
-
             })
         }
 
@@ -79,15 +94,19 @@ class CoreGame extends Component {
                     typeCard='forbici'
                 />
                 {
-                    this.state.player.punteggio
+                    this.state.player.points
                 }
+                <div onClick={this.savePlayer}>REGISTRAMI</div>
             </div>
         )
     }
 
 }
+CoreGame.propTypes = {
+    namePlayer: PropTypes.string,
+}
 CoreGame.defaultProps = {
-    namePlayer: `Player_${utils.getRandomNumber(99, 999)}`
+    namePlayer: `Player_${utils.getRandomNumber(99, 999)}`,
 }
 
 
