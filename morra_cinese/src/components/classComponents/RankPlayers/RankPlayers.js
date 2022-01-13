@@ -22,8 +22,11 @@ class RankPlayers extends Component {
             arrOfPlayers: players
         })
 
-        //this.arr = players
-        console.log(this.arr)
+    }
+
+    getRank = () => {
+        this.arr = this.state.arrOfPlayers
+    
     }
 
 
@@ -32,13 +35,25 @@ class RankPlayers extends Component {
         return (
             <div>
                 CIAO IO SOLO LA CLASSIFICA
+                
+                <button onClick={this.getRank}></button>
                 {
-                    this.state.arrOfPlayers.length > 0 &&
-                    this.state.arrOfPlayers[0]?.name
+                    this.state.arrOfPlayers.map(this.renderPlayers)
                 }
+
             </div>
         )
     }
+
+    renderPlayers = (player, id) => {
+        
+        return (
+            <div key={player + '_' + id}>
+               {player.name + '_' + player.points}
+            </div>
+        )
+    }
+   
 }
 
 export default RankPlayers;
