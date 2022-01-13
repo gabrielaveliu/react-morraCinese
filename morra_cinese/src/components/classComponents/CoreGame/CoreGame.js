@@ -13,6 +13,7 @@ class CoreGame extends Component {
         super(props);
 
         this.assetGame = ['forbici', 'carta', 'sasso']
+        this.arrOfPlayers=[]
 
         this.state = {
             player: {
@@ -25,12 +26,8 @@ class CoreGame extends Component {
 
     /* chiamata per passare i punti alla Home */
     savePlayer = () => {
-        let player = this.state.player.name
-        console.log(player, this.state.player.points)
-
-        let arr = [{ c: 1 }, { c: 1 }, { c: 1 }, { c: 1 }, { c: 1 }]
-
-        localStorage.setItem("arrayOfPlayers", arr);
+        this.arrOfPlayers.push(this.state.player)
+        localStorage.setItem("arrayOfPlayers", JSON.stringify(this.arrOfPlayers));
     }
 
 
