@@ -3,21 +3,32 @@ import React, { Component } from 'react';
 /* classComponents */
 import CoreGame from '../components/classComponents/CoreGame/CoreGame';
 import RankPlayers from '../components/classComponents/RankPlayers/RankPlayers';
-
+import Login from '../components/classComponents/Login/Login';
 
 class Home extends Component {
     constructor(props) {
         super(props);
 
 
-        this.points = null
+        this.valueInputLogin = null;
         this.state = {
-            flagShowRank: false
+            flagShowRank: false,
+            flagShowLogin: true,
         }
     }
-
-
-
+    /* metodi di visualizzazione */
+    methToShowLogin = (boolean, string) => {
+        let resultbool = null
+        if (string === undefined) {
+            resultbool = boolean
+        } else {
+            resultbool = boolean
+            this.valueInputLogin = string
+        }
+        this.setState({
+            flagShowLogin: resultbool,
+        })
+    }
     methToShowRank = () => {
         let result = null
         if (this.state.flagShowRank) {
@@ -38,11 +49,29 @@ class Home extends Component {
 
             <div>
                 {
-                    this.state.flagShowRank === false &&
-                    <CoreGame />
+                    this.state.flagShowLogin &&
+                    <Login
+                        callback={this.methToShowLogin}
+                    />
                 }
 
-                <button onClick={this.methToShowRank}>TERMINA PARTITA</button>
+
+                {
+                    this.state.flagShowRank === false && this.state.flagShowLogin === false && this.valueInputLogin !== null &&
+                    < CoreGame
+                        namePlayer={this.valueInputLogin}
+                    />
+                }
+                {
+                    this.state.flagShowRank === false && this.state.flagShowLogin === false && this.valueInputLogin === null &&
+                    < CoreGame
+                    />
+                }
+                {
+                    this.state.flagShowRank === false && this.state.flagShowLogin === false &&
+                    <button onClick={this.methToShowRank}>TERMINA PARTITA</button>
+                }
+
                 {
                     this.state.flagShowRank &&
                     <RankPlayers
