@@ -36,6 +36,7 @@ class RankPlayers extends Component {
         return (
             <div className='box-Rank  start-animation-Rank'>
                 <span className='Title-Rank'>Rank Players</span>
+
                 {
                     this.state.arrOfPlayers.map(this.renderPlayers)
                 }
