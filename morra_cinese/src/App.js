@@ -1,8 +1,8 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 /* import degli screens */
-import Home from './screens/Home';
+import Home from './screens/Home/Home';
 
 function App() {
   return (
