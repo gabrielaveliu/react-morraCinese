@@ -27,7 +27,7 @@ class CoreGame extends Component {
     savePlayer = () => {
         //prende valore dell'array e lo salva in existingPlayers come oggetto JSON
         let existingPlayers = JSON.parse(localStorage.getItem("arrayOfPlayers"));
-        console.log(existingPlayers);
+
         //copia tutti gli elementi di existingPlayers(key,value) in arrOfPlayers
         //non permette di azzerare l'array ad ogni azione 
         Object.assign(this.arrOfPlayers, existingPlayers);

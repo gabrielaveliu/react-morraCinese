@@ -1,11 +1,16 @@
+import './RankPlayers.css';
+
 import React, { Component } from 'react';
+
+import utils from '../../../utils/utils';
 
 
 
 class RankPlayers extends Component {
     constructor(props) {
         super(props)
-        this.arr = []
+
+
         this.state = {
             arrOfPlayers: [],
         }
@@ -17,42 +22,36 @@ class RankPlayers extends Component {
 
     getPlayers = () => {
         let players = JSON.parse(localStorage.getItem("arrayOfPlayers"))
+        let arrayOfPointsOrdered = utils.getValuefromkeyPoints(players)
+        let playersOrdered = utils.getPlayersOrdered(players, arrayOfPointsOrdered)
 
         this.setState({
-            arrOfPlayers: players
+            arrOfPlayers: playersOrdered
         })
 
     }
 
-    getRank = () => {
-        this.arr = this.state.arrOfPlayers
-    
-    }
-
-
 
     render() {
         return (
-            <div>
-                CIAO IO SOLO LA CLASSIFICA
-                
+            <div className='box-Rank  start-animation-Rank'>
+                <span className='Title-Rank'>Rank Players</span>
+
                 {
                     this.state.arrOfPlayers.map(this.renderPlayers)
                 }
-
             </div>
         )
     }
-
-    renderPlayers = (player, id) => {
-        
+    renderPlayers = (item, key) => {
         return (
-            <div key={player + '_' + id}>
-               {player.name + '_' + player.points}
+            <div className='box-player' key={key + '_' + key}>
+                <span className='player-name'>{item.name}</span>
+                <span className='player-points' > {item.points}</span>
             </div>
         )
     }
-   
+
 }
 
 export default RankPlayers;
