@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-
+import './CoreGame.css'
 
 /* utils */
 import utils from '../../../utils/utils';
 import CardSelection from '../../funcComponent/CardSelection';
-
-
+import Button from '../../funcComponent/Button/Button';
 
 class CoreGame extends Component {
     constructor(props) {
@@ -81,25 +80,44 @@ class CoreGame extends Component {
     /* da qui ci collegheremo a Login e CoreGame */
     render() {
         return (
-            <div>
-                io sono coregame
-                {this.props.namePlayer}
-                <CardSelection
-                    callback={this.match}
-                    typeCard='sasso'
-                />
-                <CardSelection
-                    callback={this.match}
-                    typeCard='carta'
-                />
-                <CardSelection
-                    callback={this.match}
-                    typeCard='forbici'
-                />
-                {
-                    this.state.player.points
-                }
-                <div onClick={this.savePlayer}>REGISTRAMI</div>
+            <div className="containerCoregame">
+                <div className='userBox'>
+                    <div className="user"></div>
+                <div className="namePlayerCoregame">
+                    {this.props.namePlayer}
+                </div>
+                </div>
+                
+
+                <div className='cardBox'>
+                    <CardSelection
+                        class="cardSasso"
+                        callback={this.match}
+                        typeCard='sasso'
+                    />
+                    <CardSelection
+                        class="cardCarta"
+                        callback={this.match}
+                        typeCard='carta'
+                    />
+                    <CardSelection
+                        class="cardForbici"
+                        callback={this.match}
+                        typeCard='forbici'
+                    />
+                </div>
+                <div className='playerPoints'>
+                    {
+                        this.state.player.points
+                    }
+                </div>
+                
+
+                <Button
+                    specialClass='registramiButton'
+                    onClick={this.savePlayer}
+                    label="REGISTRAMI"
+                ></Button>
             </div>
         )
     }
@@ -107,6 +125,7 @@ class CoreGame extends Component {
 }
 CoreGame.propTypes = {
     namePlayer: PropTypes.string,
+
 }
 CoreGame.defaultProps = {
     namePlayer: `Player_${utils.getRandomNumber(99, 999)}`,

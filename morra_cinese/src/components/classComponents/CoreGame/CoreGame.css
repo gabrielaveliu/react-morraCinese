@@ -1,0 +1,108 @@
+.containerCoregame{
+    margin: 0.5em;
+    font-size: 30px;
+    height: 80vh;
+    position: relative;
+    top:15px;
+    flex-basis: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow:0px 0px 15px #888888;
+    background-color: lightblue;
+}
+.userBox{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+.user{
+    margin-top: 0.8em;
+    width: 3em;
+    height: 3em;
+    opacity: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('C:\Users\gabri\OneDrive\Documenti\Development\react-morraCinese\morra_cinese\src\assets\img\woman-svgrepo-com.svg');
+}
+.namePlayerCoregame{
+    font-size: 18px;
+    padding: 0.3em;
+    text-align: center;
+    background-color:  cadetblue;
+    border: darkcyan solid 1px;
+    border-radius: 15px;
+    box-shadow:0px 0px 5px #888888;
+
+}
+.cardBox{
+    display: flex;
+}
+.cardSasso{
+    margin-right: 0.7em;
+    width: 3em;
+    height: 3em;
+    background-image: url('C:\Users\gabri\OneDrive\Documenti\Development\react-morraCinese\morra_cinese\src\assets\img\rock.svg');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    
+}
+.cardSasso:hover{
+    object-fit: contain;
+    background-size: 90%;
+    cursor: pointer;
+}
+.cardCarta{
+    margin-right: 0.5em;
+    width: 3em;
+    height: 3em;
+    background-image: url('C:\Users\gabri\OneDrive\Documenti\Development\react-morraCinese\morra_cinese\src\assets\img\paper.svg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+
+}
+.cardCarta:hover{
+    object-fit: contain;
+    background-size: 100%;
+    cursor: pointer;
+}
+.cardForbici{
+    width: 3em;
+    height: 3em;
+    background-image: url('C:\Users\gabri\OneDrive\Documenti\Development\react-morraCinese\morra_cinese\src\assets\img\scissor.svg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    
+}
+.cardForbici:hover{
+    object-fit: contain;
+    background-size: 100%;
+    cursor: pointer;
+}
+.playerPoints{
+    text-align: center;
+    font-weight: bolder;
+    width: 5em;
+    background-color:  cadetblue;
+    border: darkcyan solid 1px;
+    border-radius: 15px;
+    box-shadow:0px 0px 5px #888888;
+}
+.registramiButton{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0.5em;
+    text-align: center;
+    background-color:  cadetblue;
+    border: darkcyan solid 1px;
+    border-radius: 15px;
+    box-shadow:0px 0px 5px #888888;
+    cursor: pointer;
+    margin-bottom: 0.8em;
+}
+

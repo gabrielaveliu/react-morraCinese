@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './home.css'
 
 /* classComponents */
 import CoreGame from '../components/classComponents/CoreGame/CoreGame';
@@ -47,7 +48,7 @@ class Home extends Component {
     render() {
         return (
 
-            <div>
+            <div className='container'>
                 {
                     this.state.flagShowLogin &&
                     <Login
@@ -57,19 +58,29 @@ class Home extends Component {
 
 
                 {
-                    this.state.flagShowRank === false && this.state.flagShowLogin === false && this.valueInputLogin !== null &&
+                    this.state.flagShowRank === false &&
+                    this.state.flagShowLogin === false &&
+                    this.valueInputLogin !== null &&
                     < CoreGame
                         namePlayer={this.valueInputLogin}
+                        class="coreGameBox"
                     />
                 }
                 {
-                    this.state.flagShowRank === false && this.state.flagShowLogin === false && this.valueInputLogin === null &&
+                    this.state.flagShowRank === false &&
+                    this.state.flagShowLogin === false &&
+                    this.valueInputLogin === null &&
                     < CoreGame
+                        className="coreGameBox"
                     />
                 }
                 {
-                    this.state.flagShowRank === false && this.state.flagShowLogin === false &&
-                    <button onClick={this.methToShowRank}>TERMINA PARTITA</button>
+                    this.state.flagShowRank === false &&
+                    this.state.flagShowLogin === false &&
+                    <button
+                        onClick={this.methToShowRank}
+                        className="buttonEndGame"
+                    >TERMINA PARTITA</button>
                 }
 
                 {

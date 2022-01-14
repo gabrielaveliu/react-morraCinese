@@ -11,13 +11,11 @@ const CardSelection = (props) => {
 
     return (
         <div
-            className="coverCard"
+            className={props.class}
             onClick={handleClick}
-
+            typeCard={props.typeCard}
         >
-            {
-                props.typeCard
-            }
+            
             <img >
             </img>
 
@@ -30,6 +28,9 @@ CardSelection.propTypes = {
     callback: PropTypes.func,
     class: PropTypes.string,
     typeCard: PropTypes.string
+}
+CardSelection.defaultProps = {
+    class: "coverCard"
 }
 
 export default CardSelection;
