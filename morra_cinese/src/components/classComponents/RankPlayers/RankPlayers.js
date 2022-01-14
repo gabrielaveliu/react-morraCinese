@@ -36,7 +36,6 @@ class RankPlayers extends Component {
             <div>
                 CIAO IO SOLO LA CLASSIFICA
                 
-                <button onClick={this.getRank}></button>
                 {
                     this.state.arrOfPlayers.map(this.renderPlayers)
                 }

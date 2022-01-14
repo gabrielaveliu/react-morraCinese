@@ -17,7 +17,7 @@ class Login extends Component {
     }
     setAnimation = () => {
         this.setState({
-            animationLogin: "hiding_tab_login"
+            animationClassLogin: "hiding_tab_login"
         })
     }
 

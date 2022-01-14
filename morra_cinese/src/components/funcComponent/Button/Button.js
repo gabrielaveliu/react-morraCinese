@@ -3,10 +3,15 @@ import PropTypes from 'prop-types'
 
 
 
-function Button(props) {
+const Button = (props) => {
+
+    
     return (
         <>
-            <button className={`button_tag ${props.specialClass}`} onClick={props.onClick}>{props.label}</button>
+            <button className={`button_tag ${props.specialClass}`}
+                onClick={props.onClick}>
+                {props.label}
+            </button>
         </>
     );
 }
