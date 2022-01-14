@@ -13,6 +13,15 @@
     box-shadow:0px 0px 15px #888888;
     background-color: lightblue;
 }
+.pcChoiceBox{
+    display: none;
+}
+.playerBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
 .userBox{
     display: flex;
     flex-direction: column;
@@ -39,6 +48,8 @@
 }
 .cardBox{
     display: flex;
+    width: 9em;
+    height: 3em;
 }
 .cardSasso{
     margin-right: 0.7em;
@@ -106,18 +117,59 @@
     margin-bottom: 0.8em;
 }
 @media only screen and (min-width: 600px) {
-    .cardCarta{
+    .containerCoregame{
+        align-items: flex-start;
+    }
+    
+    .containerWithoutButton{
+        display: flex;
+        margin: 0 auto;
+        gap: 5em;
+        
+    }
+    .playerBox{
+        align-items: center;
+    }
+    .user{
         width: 4em;
         height: 4em;
     }
-    .cardSasso{
-        width: 4em;
-        height: 4em;
+    .cardBox{
+        width: 8em;
+        height: 2.5em;
     }
-    .cardForbici{
-        width: 4em;
-        height: 4em;
+    .pcChoiceBox{
+        width: 20vw;
+        height: 35vh;
+        margin-top: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+    .pcImg{
+       width: 4em;
+       height: 4em;
+       background-image: url('../../../assets/img/computer_simple.svg');
+       background-size: 100%;
+       background-repeat: no-repeat;
+       opacity: 50%;
+       text-align: center;
+    }
+    .pc{
+        font-size: 18px;
+        padding:0.2em 1em;
+        text-align: center;
+        background-color:  cadetblue;
+        border: darkcyan solid 1px;
+        border-radius: 15px;
+        box-shadow:0px 0px 5px #888888;
+
+    }
+    .registramiButton{
+        margin: 1em auto;
+        
+    }
+    
 }
 
 @media only screen and (min-width: 900px) {

@@ -81,44 +81,55 @@ class CoreGame extends Component {
     render() {
         return (
             <div className="containerCoregame">
-                <div className='userBox'>
-                    <div className="user"></div>
-                <div className="namePlayerCoregame">
-                    {this.props.namePlayer}
-                </div>
-                </div>
-                
+                <div className='containerWithoutButton'>
+                    <div className='playerBox'>
+                        <div className='userBox'>
+                            <div className="user"></div>
+                            <div className="namePlayerCoregame">
+                                {this.props.namePlayer}
+                            </div>
+                        </div>
 
-                <div className='cardBox'>
-                    <CardSelection
-                        class="cardSasso"
-                        callback={this.match}
-                        typeCard='sasso'
-                    />
-                    <CardSelection
-                        class="cardCarta"
-                        callback={this.match}
-                        typeCard='carta'
-                    />
-                    <CardSelection
-                        class="cardForbici"
-                        callback={this.match}
-                        typeCard='forbici'
-                    />
-                </div>
-                <div className='playerPoints'>
-                    {
-                        this.state.player.points
-                    }
-                </div>
-                
+                        <div className='cardBox'>
+                            <CardSelection
+                                class="cardSasso"
+                                callback={this.match}
+                                typeCard='sasso'
+                            />
+                            <CardSelection
+                                class="cardCarta"
+                                callback={this.match}
+                                typeCard='carta'
+                            />
+                            <CardSelection
+                                class="cardForbici"
+                                callback={this.match}
+                                typeCard='forbici'
+                            />
+                        </div>
+                        <div className='playerPoints'>
+                            {
+                                this.state.player.points
+                            }
+                        </div>
+                    </div>
 
+                    <div className='pcChoiceBox'>
+                      <div className='pcImg'>
+                    </div>  
+                    <p className='pc'>PC</p>
+                    </div>
+                    
+                </div>
                 <Button
                     specialClass='registramiButton'
                     onClick={this.savePlayer}
                     label="REGISTRAMI"
                 ></Button>
+
+
             </div>
+
         )
     }
 
