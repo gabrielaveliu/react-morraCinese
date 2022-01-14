@@ -25,7 +25,7 @@
     opacity: 55%;
     margin-left: auto;
     margin-right: auto;
-    background-image: url('C:\Users\gabri\OneDrive\Documenti\Development\react-morraCinese\morra_cinese\src\assets\img\woman-svgrepo-com.svg');
+    background-image: url('../../../assets/img/woman-svgrepo-com.svg');
 }
 .namePlayerCoregame{
     font-size: 18px;
@@ -44,7 +44,7 @@
     margin-right: 0.7em;
     width: 3em;
     height: 3em;
-    background-image: url('C:\Users\gabri\OneDrive\Documenti\Development\react-morraCinese\morra_cinese\src\assets\img\rock.svg');
+    background-image: url('../../../assets/img/rock.svg');
     background-size: 80%;
     background-repeat: no-repeat;
     object-fit: cover;
@@ -59,11 +59,11 @@
     margin-right: 0.5em;
     width: 3em;
     height: 3em;
-    background-image: url('C:\Users\gabri\OneDrive\Documenti\Development\react-morraCinese\morra_cinese\src\assets\img\paper.svg');
+    background-image: url('../../../assets/img/paper.svg');
     background-size: 90%;
     background-repeat: no-repeat;
     object-fit: cover;
-
+    
 }
 .cardCarta:hover{
     object-fit: contain;
@@ -73,7 +73,7 @@
 .cardForbici{
     width: 3em;
     height: 3em;
-    background-image: url('C:\Users\gabri\OneDrive\Documenti\Development\react-morraCinese\morra_cinese\src\assets\img\scissor.svg');
+    background-image: url('../../../assets/img/scissor.svg');
     background-size: 90%;
     background-repeat: no-repeat;
     object-fit: cover;
@@ -104,5 +104,26 @@
     box-shadow:0px 0px 5px #888888;
     cursor: pointer;
     margin-bottom: 0.8em;
+}
+@media only screen and (min-width: 600px) {
+    .cardCarta{
+        width: 4em;
+        height: 4em;
+    }
+    .cardSasso{
+        width: 4em;
+        height: 4em;
+    }
+    .cardForbici{
+        width: 4em;
+        height: 4em;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    
+}
+@media only screen and (min-width: 1200px) {
+    
 }
 
