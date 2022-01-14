@@ -1,7 +1,7 @@
 .PoweredByReact-container{
     position: absolute;
     bottom: 25px;
-    display: flex;
+    display: none;
     align-items: center;
     left: 15px;
 }
@@ -19,5 +19,11 @@
     }
     100%{
         transform: rotate(360deg);
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .PoweredByReact-container{
+        display: flex;
     }
 }
