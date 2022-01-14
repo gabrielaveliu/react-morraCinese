@@ -1,0 +1,102 @@
+.container_login{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+}
+.box_login{
+    height: 30vh;
+    position: relative;
+    top:15px;
+    flex-basis: 95vw;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 15px;
+    box-shadow:0px 0px 15px #888888;
+    background-color: lightblue;
+}
+.box_inputs{
+    display: flex;
+    flex-wrap: wrap;
+}
+.login_input_tag, .login_loginbutton_tag , .login_anonimusbutton_tag{
+    text-align: center;
+    flex-basis: 100%;
+}
+.login_loginbutton_tag , .login_anonimusbutton_tag{
+    margin-top: 40px;
+}
+.login_input_tag input{
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+}
+.login_input_tag input:focus{
+    border: none;
+}
+
+/*  */
+@media only screen and (min-width: 600px) {
+    .box_login {
+        flex-basis: 80vw;
+        top:30px;
+        box-shadow:0px 12px 8px #888888;
+    }
+    .login_loginbutton_tag , .login_anonimusbutton_tag{
+        flex-basis: 50%;
+        margin-top: none;
+
+    }
+    .login_loginbutton_tag button , .login_anonimusbutton_tag button{
+        flex-basis: 50%;
+        margin-top: none;
+        position: absolute;
+        bottom: 25%;
+    
+    }
+    .login_loginbutton_tag button {
+        left: 15%;
+    }
+    .login_anonimusbutton_tag button{
+        right: 15%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .box_login {
+        flex-basis: 40vw
+    }
+    .login_loginbutton_tag button {
+        left: 5%;
+        bottom: 20%;
+    }
+    .login_anonimusbutton_tag button{
+        right: 5%;
+        bottom: 20%;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    
+    .login_loginbutton_tag button {
+        left: 20%;
+    }
+    .login_anonimusbutton_tag button{
+        right: 20%;
+    }
+}
+
+
+/* animation */
+.hiding_tab_login{
+    animation-name:hiding_tab_login;
+    animation-duration:.5s;
+    animation-timing-function: linear;
+
+}
+@keyframes hiding_tab_login {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+  
