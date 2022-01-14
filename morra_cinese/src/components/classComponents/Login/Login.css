@@ -48,7 +48,7 @@
 .hiding_tab_login{
     top:15px;
     animation-name:hiding_tab_login;
-    animation-duration:300ms;
+    animation-duration:400ms;
     animation-timing-function: linear;
 }
 @keyframes hiding_tab_login {

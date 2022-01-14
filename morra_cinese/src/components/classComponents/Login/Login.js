@@ -32,7 +32,7 @@ class Login extends Component {
                 if (this.props.callback !== undefined) {
                     this.props.callback(false, this.valueInput)
                 }
-            }, 200);
+            }, 400);
         }
     }
     handlerClickAnonimus = () => {
@@ -43,7 +43,7 @@ class Login extends Component {
                 this.props.callback(false)
 
             }
-        }, 200);
+        }, 400);
     }
 
     render() {
