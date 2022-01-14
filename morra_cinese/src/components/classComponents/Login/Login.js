@@ -17,7 +17,7 @@ class Login extends Component {
     }
     setAnimation = () => {
         this.setState({
-            animationLogin: "hiding_tab_login"
+            animationClassLogin: "hiding_tab_login"
         })
     }
 
@@ -25,13 +25,15 @@ class Login extends Component {
         this.valueInput = e.target.value;
     }
     handlerClicklogin = () => {
-        this.setAnimation()
+        if (this.valueInput.length > 0) {
+            this.setAnimation()
 
-        setInterval(() => {
-            if (this.props.callback !== undefined && this.valueInput.length > 0) {
-                this.props.callback(false, this.valueInput)
-            }
-        }, 500);
+            setInterval(() => {
+                if (this.props.callback !== undefined) {
+                    this.props.callback(false, this.valueInput)
+                }
+            }, 200);
+        }
     }
     handlerClickAnonimus = () => {
         this.setAnimation()
@@ -41,7 +43,7 @@ class Login extends Component {
                 this.props.callback(false)
 
             }
-        }, 500);
+        }, 200);
     }
 
     render() {

@@ -13,7 +13,7 @@ class CoreGame extends Component {
         super(props);
 
         this.assetGame = ['forbici', 'carta', 'sasso']
-        this.arrOfPlayers=[]
+        this.arrOfPlayers = []
 
         this.state = {
             player: {
@@ -28,10 +28,10 @@ class CoreGame extends Component {
     savePlayer = () => {
         //prende valore dell'array e lo salva in existingPlayers come oggetto JSON
         let existingPlayers = JSON.parse(localStorage.getItem("arrayOfPlayers"));
-        console.log(existingPlayers);
+
         //copia tutti gli elementi di existingPlayers(key,value) in arrOfPlayers
         //non permette di azzerare l'array ad ogni azione 
-        Object.assign(this.arrOfPlayers,existingPlayers);
+        Object.assign(this.arrOfPlayers, existingPlayers);
         this.arrOfPlayers.push(this.state.player)
         localStorage.setItem("arrayOfPlayers", JSON.stringify(this.arrOfPlayers));
     }

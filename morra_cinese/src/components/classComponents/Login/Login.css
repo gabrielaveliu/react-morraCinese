@@ -5,7 +5,7 @@
     align-items:flex-start;
 }
 .box_login{
-    height: 30vh;
+    height: 40vh;
     position: relative;
     top:15px;
     flex-basis: 95vw;
@@ -25,7 +25,7 @@
     flex-basis: 100%;
 }
 .login_loginbutton_tag , .login_anonimusbutton_tag{
-    margin-top: 40px;
+    margin-top: 35px;
 }
 .login_input_tag input{
     border: none;
@@ -36,6 +36,25 @@
     border: none;
 }
 
+/* animation */
+.startBoxLog{
+    top:15px;
+    animation: startBoxLog 600ms linear 0s;
+}
+@keyframes startBoxLog {
+    0% {top:-700px}
+    100% {top:15px}
+}
+.hiding_tab_login{
+    top:15px;
+    animation-name:hiding_tab_login;
+    animation-duration:300ms;
+    animation-timing-function: linear;
+}
+@keyframes hiding_tab_login {
+    0% {top: 30px;}
+    100% {top:-400px}
+}
 /*  */
 @media only screen and (min-width: 600px) {
     .box_login {
@@ -62,10 +81,15 @@
         right: 15%;
     }
 }
+/* animation */
+@keyframes hiding_tab_login {
+    0% {top: 15px;}
+    100% {top:-600px}
+}
 
 @media only screen and (min-width: 900px) {
     .box_login {
-        flex-basis: 40vw
+        flex-basis: 500px
     }
     .login_loginbutton_tag button {
         left: 5%;
@@ -87,16 +111,6 @@
 }
 
 
-/* animation */
-.hiding_tab_login{
-    animation-name:hiding_tab_login;
-    animation-duration:.5s;
-    animation-timing-function: linear;
 
-}
-@keyframes hiding_tab_login {
-    from {background-color: red;}
-    to {background-color: yellow;}
-}
 
   
