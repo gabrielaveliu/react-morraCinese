@@ -1,0 +1,23 @@
+.PoweredByReact-container{
+    position: absolute;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    left: 15px;
+}
+.PoweredByReact-text{
+    font-weight: bolder;
+    font-style: italic;
+}
+.PoweredByReact-cover-image img{
+    height: 80px;
+    animation: rotateLogo 2s linear  0s infinite;
+}
+@keyframes rotateLogo {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

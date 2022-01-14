@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import './home.css'
 
 /* classComponents */
-import CoreGame from '../components/classComponents/CoreGame/CoreGame';
-import RankPlayers from '../components/classComponents/RankPlayers/RankPlayers';
-import Login from '../components/classComponents/Login/Login';
+import CoreGame from '../../components/classComponents/CoreGame/CoreGame';
+import RankPlayers from '../../components/classComponents/RankPlayers/RankPlayers';
+/* func Components */
+import Login from '../../components/classComponents/Login/Login';
+import Button from '../../components/funcComponent/Button/Button';
+import PoweredByReact from '../../components/funcComponent/PoweredByReact/PoweredByReact';
+
 
 class Home extends Component {
     constructor(props) {
@@ -13,6 +17,7 @@ class Home extends Component {
 
         this.valueInputLogin = null;
         this.state = {
+            players: [],
             flagShowRank: false,
             flagShowLogin: true,
         }
@@ -28,6 +33,7 @@ class Home extends Component {
         }
         this.setState({
             flagShowLogin: resultbool,
+            players: localStorage.getItem("arrayOfPlayers"),
         })
     }
     methToShowRank = () => {
@@ -48,7 +54,9 @@ class Home extends Component {
     render() {
         return (
 
-            <div className='container'>
+            <div className='container-home'>
+                <PoweredByReact />
+
                 {
                     this.state.flagShowLogin &&
                     <Login
@@ -77,10 +85,14 @@ class Home extends Component {
                 {
                     this.state.flagShowRank === false &&
                     this.state.flagShowLogin === false &&
-                    <button
-                        onClick={this.methToShowRank}
-                        className="buttonEndGame"
-                    >TERMINA PARTITA</button>
+                    this.state.players?.length > 0 &&
+                    <div className='box-buttonEndGame'>
+                        <Button
+                            onClick={this.methToShowRank}
+                            label='Termina Partita'
+                            specialClass='buttonEndGame'
+                        />
+                    </div>
                 }
 
                 {
